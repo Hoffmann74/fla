@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrlehrerausbildung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .topic {
+        margin-bottom: 30px;
+      }
+
+      .links {
+        margin-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Beurteilen</h2>
+    <div class="topic">
+      <h3>
+        Kompetenz BE-1: Förderorientierte Lernstands- und
+        Lernverlaufsbeurteilung
+      </h3>
+      <div class="links">
+        <a style="color: grey" onclick="navigateTo(0)">BE-6.1.1 Lernziele und Kontrolle</a><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-6.1.2 Besprechung des Ausbildungsstands</a
+        >
+      </div>
+    </div>
+
+    <script>
+      function navigateTo(pageIndex) {
+        parent.postMessage({ type: "navigate", pageIndex: pageIndex }, "*");
+      }
+    </script>
+  </body>
+</html>

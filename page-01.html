@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrlehrerausbildung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .topic {
+        margin-bottom: 30px;
+      }
+
+      .links {
+        margin-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Erziehen</h2>
+    <div class="topic">
+      <h3>
+        Kompetenz BE-1: Berücksichtigung personeller, sozialer und kultureller
+        Lernbedingungen
+      </h3>
+      <div class="links">
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.1.1 Erziehen in der Fahrausbildung I</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.1.2 Faktoren der erzieherischen Tätigkeit I</a
+        ><br />
+        <!-- <a onclick="navigateTo(0)">BE-5.1.3 Faktoren der erzieherischen Tätigkeit II</a><br> -->
+        <a style="color: grey" onclick="navigateTo(0)">BE-5.1.4 Erwachsenenbildung I</a><br />
+        <!-- <a onclick="navigateTo(0)">BE-5.1.5 Erwachsenenbildung II</a><br> -->
+        <a style="color: grey" onclick="navigateTo(0)">BE-5.1.6 Sozialisation</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.1.7 Heterogene Lerngruppen</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.1.8 Individuelle Komponenten des Lernens</a
+        >
+      </div>
+      <h3>
+        Kompetenz BE-2: Berücksichtigung personeller, sozialer und kultureller
+        Lernbedingungen
+      </h3>
+      <div class="links">
+        <!-- <a onclick="navigateTo(0)">BE-5.2.1 Einstellungen und Wertehaltungen</a><br> -->
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.2.2 Beeinflussung von Einstellungen I</a
+        ><br />
+        <!-- <a onclick="navigateTo(0)">BE-5.2.3 Beeinflussung von Einstellungen II</a><br> -->
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-5.2.4 Bildung von erwünschten Einstellungen</a
+        ><br />
+        <!-- <a onclick="navigateTo(0)">BE-5.2.5 Bildung von verkehrssicheren Einstellungen</a><br> -->
+        <!-- <a onclick="navigateTo(0)">BE-5.2.6 Einstellungen zum Autofahren und Straßenverkehr</a><br> -->
+        <!-- <a onclick="navigateTo(0)">BE-5.2.7 Hebung der Verkehrsdisziplin</a><br> -->
+        <a style="color: grey" style="color: orange" onclick="navigateTo(19)"
+          >BE-5.2.8 Definition &quot;Einstellungen&quot;</a
+        ><br />
+      </div>
+    </div>
+
+    <script>
+      function navigateTo(pageIndex) {
+        parent.postMessage({ type: "navigate", pageIndex: pageIndex }, "*");
+      }
+    </script>
+  </body>
+</html>

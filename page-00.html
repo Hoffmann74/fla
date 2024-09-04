@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrlehrerausbildung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .topic {
+        margin-bottom: 30px;
+      }
+
+      .links {
+        margin-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Unterrichten</h2>
+    <div class="topic">
+      <h3>Kompetenz BE-1: Grundlagen der Fahranfängervorbereitung</h3>
+      <div class="links">
+        <!-- <a onclick="navigateTo(0)">BE-4.1.1 Fahrschüler-Ausbildungsordnung</a><br> -->
+        <a style="color: green" onclick="navigateTo(7)"
+          >BE-4.1.2 Anschaulichkeit in der Fahrausbildung</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.1.3 Ausbildungsprinzipien Theorie</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.1.3 Ausbildungsprinzipien Praxis</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)">BE-4.1.4 Didaktische Grundsätze I</a><br />
+        <!-- <a style="color: red" onclick="navigateTo(0)">BE-4.1.5 Didaktische Grundsätze II</a> -->
+      </div>
+      <h3>Kompetenz BE-2: Grundlagen der Fahranfängervorbereitung</h3>
+      <div class="links">
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.2.1 Qualitätskriterien des theoretischen Unterrichts</a
+        ><br />
+        <!-- <a onclick="navigateTo(0)">BE-4.2.2 Lernziele</a><br> -->
+        <!-- <a onclick="navigateTo(0)">BE-4.2.3 Allgemeine Ausbildungsgrundsätze</a><br> -->
+        <!-- <a onclick="navigateTo(0)">BE-4.2.4 Planung des theoretischen Unterrichts</a><br> -->
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.2.5 Methoden und Medien im Theorieunterricht</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.2.6 Lerntypen und Lernmotivation bei Fahrschülern</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)">BE-4.2.7 Kleingruppenarbeit</a><br />
+        <!-- <a onclick="navigateTo(0)">BE-4.2.8 Unterrichtsformen</a><br> -->
+        <a style="color: red" onclick="navigateTo(0)"
+          >BE-4.2.9 Unterrichtsplanung in der Fahrausbildung</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)">BE-4.2.10 Unterrichtsmedien</a><br />
+        <a style="color: grey" onclick="navigateTo(0)"
+          >BE-4.2.11 Ausbildung und Gedächtnis</a
+        ><br />
+        <a style="color: grey" onclick="navigateTo(0)">BE-4.2.12 Kommunikation in der Fahrschule</a
+        ><br />
+        <!-- <a onclick="navigateTo(0)">BE-4.3.13 Unterrichtsplanung zur Lektion &nbsp;Persönliche Voraussetzungen&nbsp;</a><br> -->
+      </div>
+    </div>
+
+    <script>
+      function navigateTo(pageIndex) {
+        parent.postMessage({ type: "navigate", pageIndex: pageIndex }, "*");
+      }
+    </script>
+  </body>
+</html>

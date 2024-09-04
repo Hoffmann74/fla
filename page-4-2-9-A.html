@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrlehrerausbildung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .topic {
+        margin-bottom: 30px;
+      }
+
+      .links {
+        margin-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Unterrichtsplanung in der Fahrausbildung</h2>
+    <p>
+      <font color="grey"
+        >Welche Überlegungen müssen Sie für den TU anstellen in Bezug auf ...</font
+      >
+    </p>
+    
+    <p>
+      <a onclick="navigateTo(0)">(i) ... den FL</a>
+    </p>
+    <p>
+      <a onclick="navigateTo(0)">(ii) ... den FS</a>
+    </p>
+    <p>
+      <a onclick="navigateTo(0)">(iii) ... die Fahrschule</a>
+    </p>
+    <p>
+      <font color="grey">
+        Welche Konsequenzen ergeben sich daraus für die Erteilung des TU?</font
+      >
+    </p>
+    <p>
+      <font color="grey"
+        >Ordnen Sie zu, indem Sie die unteren Felder ziehen.</font
+      >
+    </p>
+
+    <script>
+      function navigateTo(pageIndex) {
+        parent.postMessage({ type: "navigate", pageIndex: pageIndex }, "*");
+      }
+    </script>
+  </body>
+</html>

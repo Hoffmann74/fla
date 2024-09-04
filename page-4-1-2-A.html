@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrlehrerausbildung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h2,
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .topic {
+        margin-bottom: 30px;
+      }
+
+      .links {
+        margin-left: 20px;
+      }
+
+      a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Anschaulichkeit in der Fahrausbildung</h2>
+    <p>
+      <font color="grey">(i) Was verstehen Sie unter Anschaulichkeit?</font>
+    </p>
+    <p><font color="grey">(ii) Was soll damit er­reicht werden?</font></p>
+    <p>
+      <font color="grey"
+        >(iii) Erläutern Sie mit je einem Beispiel, wie Sie einen bestimmten
+        Inhalt des TUs und PUs anschaulich darstellen.</font
+      >
+    </p>
+    <p>Viel Erfolg!</p>
+    <p><a onclick="navigateTo(8)">Vor</a></p>
+
+    <script>
+      function navigateTo(pageIndex) {
+        parent.postMessage({ type: "navigate", pageIndex: pageIndex }, "*");
+      }
+    </script>
+  </body>
+</html>

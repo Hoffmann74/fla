@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+
+#feedback {
+    margin-bottom: 20px;
+}
+
+#feedback-message {
+    font-size: 18px;
+    color: #333;
+}
+
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: #0056b3;
+}
+
+#jokers {
+    margin-bottom: 20px;
+}
+
+#jokers button {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#jokers button.available {
+    background-color: #28a745; /* Grün */
+}
+
+#jokers button.used-once {
+    background-color: #ffc107; /* Gelb */
+}
+
+#jokers button.used-twice {
+    background-color: #dc3545; /* Rot */
+}
+
+#jokers button.out-of-stock {
+    background-color: #6c757d; /* Grau */
+    cursor: not-allowed;
+}
+
+#status {
+    font-size: 18px;
+}
+
+#status p {
+    margin: 5px 0;
+}
+
+#start-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+#start-button:hover {
+    background-color: #0056b3;
+}

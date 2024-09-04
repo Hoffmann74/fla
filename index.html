@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center; /* Horizontale Zentrierung */
+        align-items: center; /* Vertikale Zentrierung */
+        background-color: #f4f4f4;
+      }
+
+      .login-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .login-container h2 {
+        margin-bottom: 20px;
+      }
+      .login-container form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .login-container input[type="text"],
+      .login-container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .login-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+      .login-container input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Pädagogik</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Benutzername" required />
+        <input type="password" id="password" placeholder="Passwort" required />
+        <input type="submit" value="Anmelden" />
+        <div class="error" id="error-message"></div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          // Überprüfe die Anmeldedaten
+          if (username === "SVG" && password === "369") {
+            // Leite zur Hauptseite weiter (main.html)
+            window.location.href = "main.html";
+          } else {
+            // Zeige eine Fehlermeldung an
+            document.getElementById("error-message").textContent =
+              "Falscher Benutzername oder Passwort";
+          }
+        });
+    </script>
+  </body>
+</html>

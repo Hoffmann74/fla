@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer wird Millionär Clone</title>
+    <link rel="stylesheet" href="./quizze/mySingleChoiceStyles.css">
+</head>
+<body>
+    <div id="game">
+        <div id="feedback">
+            <p id="feedback-message">Willkommen zum Spiel!</p>
+        </div>
+        <div id="question-container">
+            <h1 id="question"></h1>
+            <div class="answers">
+                <button class="answer" onclick="chooseAnswer(0)"></button>
+                <button class="answer" onclick="chooseAnswer(1)"></button>
+                <button class="answer" onclick="chooseAnswer(2)"></button>
+                <button class="answer" onclick="chooseAnswer(3)"></button>
+            </div>
+        </div>
+        <div id="jokers">
+            <button id="joker-50_50" onclick="useJoker('50_50')">50:50 (3)</button>
+        </div>
+        <div id="status">
+            <p>Fragen beantwortet: <span id="questions-answered">0</span></p>
+            <p>Gewonnen: <span id="prize">0</span></p>
+        </div>
+        <button id="start-button" onclick="startGame()">Spiel starten</button>
+    </div>
+    <script src="./quizze/mySingleChoiceScript.js"></script>
+</body>
+</html>

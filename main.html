@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Externe HTML-Seiten Einbinden</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #iframe-container {
+        width: 90%;
+        height: calc(
+          100% - 80px
+        ); /* Höhe abzüglich des Bereichs für die Links und zusätzlichen Abstand */
+        border: none;
+        max-width: 1200px; /* Maximalbreite für größere Bildschirme */
+        transition: margin-top 0.3s ease;
+      }
+
+      /* Container für die oberen Links */
+      #top-link-container {
+        position: absolute;
+        top: 20px; /* Abstand vom oberen Rand des Viewports */
+        width: 100%; /* Vollständige Breite des Containers */
+        max-width: 1200px; /* Maximalbreite für größere Bildschirme */
+        display: flex;
+        justify-content: center; /* Zentriert die Links horizontal */
+        align-items: center; /* Vertikale Ausrichtung der Links */
+        padding: 0 40px;
+        gap: 40px; /* Abstand zwischen den Links */
+      }
+
+      #dropdown,
+      #dropdownTest {
+        position: relative;
+        display: inline-block;
+      }
+
+      #dropdownContent,
+      #dropdownContentTest {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: 5px; /* Abstand zwischen Dropdown und darüber liegendem Link */
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        left: 0; /* Dropdown linksbündig unter dem Link ausrichten */
+      }
+
+      #dropdown:hover #dropdownContent,
+      #dropdownContent:hover {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #dropdownTest:hover #dropdownContentTest,
+      #dropdownContentTest:hover {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #dropdownContent a,
+      #dropdownContentTest a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      #dropdownContent a:hover,
+      #dropdownContentTest a:hover {
+        background-color: #f1f1f1;
+      }
+
+      #contentLink {
+        font-size: 16px;
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="iframe-container" src="page-00.html"></iframe>
+
+    <!-- Container für alle Links oben -->
+    <div id="top-link-container">
+      <div id="dropdown">
+        <a id="contentLink" class="link">Üben</a>
+        <div id="dropdownContent">
+          <a href="#" id="teachLink">Unterrichten</a>
+          <a href="#" id="educateLink">Erziehen</a>
+          <a href="#" id="evaluateLink">Beurteilen</a>
+        </div>
+      </div>
+      <div id="dropdownTest">
+        <a id="contentLink" class="link">Testen</a>
+        <div id="dropdownContentTest">
+          <a href="#" id="terminologyLink">Fachbegriffe</a>
+          <a href="#" id="summaryLink">Zusammenfassung</a>
+          <a href="#" id="simulationLink">Prüfungssimulation</a>
+        </div>
+      </div>
+      <a href="index.html" id="logoutLink">Abmelden</a>
+    </div>
+
+    <script>
+      // Registriere hier die externen Seiten.
+      const pages = [
+        "page-00.html",
+        "page-01.html",
+        "page-02.html",
+        "page-03-Fachbegriffe-A.html",
+        "page-04-Fachbegriffe-L.html",
+        "page-05-Zusammenfassung-A.html",
+        "page-06-Zusammenfassung-L.html",
+        // "page-Pruefungssimulation-A.html",
+        // "page-Pruefungssimulation-L.html",
+        "page-4-1-2-A.html",
+        "page-4-1-2-L.html",
+        "page-4-2-9-A.html",
+      ];
+      let currentPage = 0;
+
+      function loadPage(pageIndex) {
+        document.getElementById("iframe-container").src = pages[pageIndex];
+        currentPage = pageIndex;
+      }
+
+      document.getElementById("teachLink").addEventListener("click", () => {
+        loadPage(0); // Unterrichten
+      });
+
+      document.getElementById("educateLink").addEventListener("click", () => {
+        loadPage(1); // Erziehen
+      });
+
+      document.getElementById("evaluateLink").addEventListener("click", () => {
+        loadPage(2); // Beurteilen
+      });
+
+      document
+        .getElementById("terminologyLink")
+        .addEventListener("click", () => {
+          loadPage(3); // Fachbegriffe
+        });
+
+      document.getElementById("summaryLink").addEventListener("click", () => {
+        loadPage(5); // Zusammenfassung
+      });
+
+      /*
+      document.getElementById("simulationLink").addEventListener("click", () => {
+        loadPage(0); // Prüfungssimulation
+      });
+      */
+
+      window.addEventListener("message", (event) => {
+        if (event.data.type === "navigate") {
+          loadPage(event.data.pageIndex);
+        }
+      });
+    </script>
+  </body>
+</html>
